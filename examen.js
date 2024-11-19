@@ -62,7 +62,7 @@ function calificar() {
                 document.getElementById("resultado" + i).innerText = "¡Correcto!";
                 document.getElementById("resultado" + i).style.color = "green";
             } else {
-                document.getElementById("resultado" + i).innerText = "Incorrecto";
+                document.getElementById("resultado" + i).innerText = "Incorrecto, la respuesta correcta es la " + respuestasCorrectas["q" + i];
                 document.getElementById("resultado" + i).style.color = "red";
             }
         }

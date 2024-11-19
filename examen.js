@@ -69,4 +69,5 @@ function calificar() {
 
     // Mostrar el puntaje total
     alert("Tu puntuación es: " + contador + " de 37.");
+    contador = 0;
 }

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Preguntas Apache</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Formulario de Preguntas sobre Apache</h1>
+    </header>
+    <main>
+        <form action="#" method="post" class="questions-form">
+            <!-- Pregunta 1 -->
+            <fieldset>
+                <legend>1. La carpeta /etc/apache2/mods-available de apache contiene:</legend>
+                <label><input type="radio" name="q1" id="q1" value="a"> a) Contiene enlaces simbólicos</label><br>
+                <label><input type="radio" name="q1" id="q1" value="b"> b) Contiene los ficheros de configuración de hosts virtuales</label><br>
+                <label><input type="radio" name="q1" id="q1" value="c"> c) Los ficheros generales de configuración de apache</label><br>
+                <label><input type="radio" name="q1" id="q1" value="d"> d) Contiene ficheros para configurar y cargar módulos</label><br>
+                <span id="resultado1"></span> 
+            </fieldset>
+            
+            <!-- Pregunta 2 -->
+            <fieldset>
+                <legend>2. En la carpeta sites-available:</legend>
+                <label><input type="radio" name="q2" id="q2" value="a"> a) Contiene los ficheros de configuración de hosts virtuales</label><br>
+                <label><input type="radio" name="q2" id="q2" value="b"> b) Contiene enlaces a ficheros del directorio /etc/apache2/sites-available</label><br>
+                <label><input type="radio" name="q2" id="q2" value="c"> c) Contiene ficheros para configurar y cargar módulos</label><br>
+                <label><input type="radio" name="q2" id="q2" value="d"> d) Contiene enlaces simbólicos</label><br>
+                <span id="resultado2"></span> 
+            </fieldset>
+
+            <fieldset>
+                <legend>3. En la carpeta sites-enabled:</legend>
+                <label><input type="radio" name="q3" value="a"> a) Contiene enlaces a ficheros del directorio /etc/apache2/sites-available</label><br>
+                <label><input type="radio" name="q3" value="b"> b) Contiene ficheros para configurar y cargar módulos</label><br>
+                <label><input type="radio" name="q3" value="c"> c) Contiene los ficheros de configuración de hosts virtuales</label><br>
+                <label><input type="radio" name="q3" value="d"> d) Contiene enlaces simbólicos a los ficheros contenidos en /etc/apache2/mods-available</label>
+                <span id="resultado3"></span>
+            </fieldset>
+
+            <!-- Pregunta 4 -->
+            <fieldset>
+                <legend>4. La plataforma de aplicaciones LAMP, la forman:</legend>
+                <label><input type="radio" name="q4" value="a"> a) Linux, Tomcat, mysql y perl</label><br>
+                <label><input type="radio" name="q4" value="b"> b) Linux, Tomcat, mysql y python</label><br>
+                <label><input type="radio" name="q4" value="c"> c) Windows, Apache, mysql y PHP/Perl/Python</label><br>
+                <label><input type="radio" name="q4" value="d"> d) Linux, apache, mysql y PHP/Perl/Python</label>
+                <span id="resultado4"></span>
+            </fieldset>
+
+            <!-- Pregunta 5 -->
+            <fieldset>
+                <legend>5. La directiva DocumentRoot:</legend>
+                <label><input type="radio" name="q5" value="a"> a) Indica los nombres y orden de las páginas por defecto que apache buscará si en la petición de un cliente no se especifica</label><br>
+                <label><input type="radio" name="q5" value="b"> b) Indica el directorio a partir del cual se encuentran las páginas Web del servidor</label><br>
+                <label><input type="radio" name="q5" value="c"> c) Indica el nombre del fichero que controla el acceso a determinados directorios</label><br>
+                <label><input type="radio" name="q5" value="d"> d) Indica qué información, cómo se guardará y cómo se llamarán en los ficheros logs de acceso del sistema</label>
+                <span id="resultado5"></span>
+            </fieldset>
+
+            <!-- Pregunta 6 -->
+            <fieldset>
+                <legend>6. Apache es un servidor:</legend>
+                <label><input type="radio" name="q6" value="a"> a) Modular pero no se pueden instalar módulos si no se hace en la instalación inicial</label><br>
+                <label><input type="radio" name="q6" value="b"> b) Modular y se pueden instalar módulos adicionales según se vayan necesitando</label><br>
+                <label><input type="radio" name="q6" value="c"> c) Modular y cada módulo adicional instalado se añadirá al directorio /etc/apache2/mods-available</label><br>
+                <label><input type="radio" name="q6" value="d"> d) b) y c) son ciertas</label>
+                <span id="resultado6"></span>
+            </fieldset>
+
+            <!-- Pregunta 7 -->
+            <fieldset>
+                <legend>7. La carpeta mods-enabled:</legend>
+                <label><input type="radio" name="q7" value="a"> a) Almacena las directivas que determinan qué puerto TCP</label><br>
+                <label><input type="radio" name="q7" value="b"> b) Contiene los ficheros de configuración de hosts virtuales</label><br>
+                <label><input type="radio" name="q7" value="c"> c) Contiene enlaces simbólicos a los ficheros contenidos en /etc/apache2/mods-available</label><br>
+                <label><input type="radio" name="q7" value="d"> d) Contiene ficheros para configurar y cargar módulos</label>
+                <span id="resultado7"></span>
+            </fieldset>
+
+            <!-- Pregunta 8 -->
+            <fieldset>
+                <legend>8. Para instalar y activar un módulo nuevo, la secuencia de instrucciones será:</legend>
+                <label><input type="radio" name="q8" value="a"> a) sudo apt-get install libapache2-mod-auth-mysql, sudo a2dismod auth_mysql, sudo systemctl restart apache2</label><br>
+                <label><input type="radio" name="q8" value="b"> b) sudo systemctl restart apache2, sudo apt-get install libapache2-mod-auth-mysql, sudo a2enmod auth_mysql</label><br>
+                <label><input type="radio" name="q8" value="c"> c) sudo apt-get install libapache2-mod-auth-mysql, sudo a2enmod auth_mysql, sudo systemctl restart apache2</label><br>
+                <label><input type="radio" name="q8" value="d"> d) sudo a2enmod auth_mysql, sudo systemctl restart apache2</label>
+                <span id="resultado8"></span>
+            </fieldset>
+
+            <!-- Pregunta 9 -->
+            <fieldset>
+                <legend>9. Usando VirtualHost podemos publicar más de una página web en un mismo servidor Apache. Se puede implementar por:</legend>
+                <label><input type="radio" name="q9" value="a"> a) Por puerto</label><br>
+                <label><input type="radio" name="q9" value="b"> b) Por nombre</label><br>
+                <label><input type="radio" name="q9" value="c"> c) Por IP</label><br>
+                <label><input type="radio" name="q9" value="d"> d) Todas son correctas</label>
+                <span id="resultado9"></span>
+            </fieldset>
+
+            <!-- Pregunta 10 -->
+            <fieldset>
+                <legend>10. Los archivos de configuración de los host virtuales se guardan en la carpeta:</legend>
+                <label><input type="radio" name="q10" value="a"> a) /etc/apache2/sites-available</label><br>
+                <label><input type="radio" name="q10" value="b"> b) /etc/apache2/</label><br>
+                <label><input type="radio" name="q10" value="c"> c) /etc/apache2/sites-enabled</label><br>
+                <label><input type="radio" name="q10" value="d"> d) /var/www/sitio1</label>
+                <span id="resultado10"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>11. ¿Hay que habilitar los host virtuales?</legend>
+                <label><input type="radio" name="q11" id="q11a" value="a"> a) No es necesario, con el fichero de configuración es suficiente</label><br>
+                <label><input type="radio" name="q11" id="q11b" value="b"> b) Sí con la orden a2dissite</label><br>
+                <label><input type="radio" name="q11" id="q11c" value="c"> c) Sí con la orden a2ensite</label><br>
+                <label><input type="radio" name="q11" id="q11d" value="d"> d) Ninguna es correcta</label>
+                <span id="resultado11"></span>
+            </fieldset>
+        
+            <!-- Pregunta 12 -->
+            <fieldset>
+                <legend>12. Con la instalación de Apache se crea por defecto el archivo:</legend>
+                <label><input type="radio" name="q12" id="q12a" value="a"> a) /etc/apache2/sites-enabled/000-default.conf</label><br>
+                <label><input type="radio" name="q12" id="q12b" value="b"> b) /etc/apache2/000-default.conf</label><br>
+                <label><input type="radio" name="q12" id="q12c" value="c"> c) /etc/apache2/sites-available/000-default.conf</label><br>
+                <label><input type="radio" name="q12" id="q12d" value="d"> d) No se crea ninguna, tenemos que crear manualmente el sitio virtual por defecto.</label>
+                <span id="resultado12"></span>
+            </fieldset>
+        
+            <!-- Pregunta 13 -->
+            <fieldset>
+                <legend>13. Pasos a seguir para la creación de host virtual llamado sitio1:</legend>
+                <label><input type="radio" name="q13" id="q13a" value="a"> a) Creación de la página web de ejemplo<br>
+                Creación directorio en /var/www/sitio1<br>
+                Habilitar el sitio web virtual<br>
+                Creación del archivo de configuración del sitio web<br>
+                Reinicio de apache</label><br>
+                <label><input type="radio" name="q13" id="q13b" value="b"> b) Creación directorio en /var/www/sitio1<br>
+                Creación de la página web de ejemplo<br>
+                Creación del archivo de configuración del sitio web<br>
+                Habilitar el sitio web virtual<br>
+                Reinicio de apache</label><br>
+                <label><input type="radio" name="q13" id="q13c" value="c"> c) sudo mkdir /var/www/sitio1<br>
+                sudo nano /var/www/sitio1/index.html<br>
+                sudo nano /etc/apache2/sites-available/sitio1.conf<br>
+                sudo a2ensite sitio1.conf<br>
+                sudo systemctl restart apache2</label><br>
+                <label><input type="radio" name="q13" id="q13d" value="d"> d) b) y c) correctas</label>
+                <span id="resultado13"></span>
+            </fieldset>
+        
+            <!-- Pregunta 14 -->
+            <fieldset>
+                <legend>14. Si en la definición de nuestro sitio incluimos la opción Order allow, deny, estamos indicando que ninguna máquina podrá acceder al sitio.</legend>
+                <label><input type="radio" name="q14" id="q14a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q14" id="q14b" value="b"> b) Falso</label>
+                <span id="resultado14"></span>
+            </fieldset>
+        
+            <!-- Pregunta 15 -->
+            <fieldset>
+                <legend>15. Si está activa la opción Options Indexes, en el caso de que no haya una página index.html, Apache devolverá un listado con los ficheros correspondientes a la ruta indicada en la URL.</legend>
+                <label><input type="radio" name="q15" id="q15a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q15" id="q15b" value="b"> b) Falso</label>
+                <span id="resultado15"></span>
+            </fieldset>
+        
+            <!-- Pregunta 16 -->
+            <fieldset>
+                <legend>16. Por defecto, en Apache solo se pueden publicar ficheros ubicados en /var/www. Para publicar ficheros de otras rutas hay que utilizar la directiva Directory.</legend>
+                <label><input type="radio" name="q16" id="q16a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q16" id="q16b" value="b"> b) Falso</label>
+                <span id="resultado16"></span>
+            </fieldset>
+        
+            <!-- Pregunta 17 -->
+            <fieldset>
+                <legend>17. Con la directiva DirectoryIndex podemos especificar el nombre de la página principal si no se especifica en la URL. Puede ser más de una página.</legend>
+                <label><input type="radio" name="q17" id="q17a" value="a"> a) Falso</label><br>
+                <label><input type="radio" name="q17" id="q17b" value="b"> b) Verdadero</label>
+                <span id="resultado17"></span>
+            </fieldset>
+        
+            <!-- Pregunta 18 -->
+            <fieldset>
+                <legend>18. Si en la definición de nuestro sitio incluimos la opción Order deny, allow, estaremos indicando que todo el mundo tiene acceso a nuestro sitio web.</legend>
+                <label><input type="radio" name="q18" id="q18a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q18" id="q18b" value="b"> b) Falso</label>
+                <span id="resultado18"></span>
+            </fieldset>
+        
+            <!-- Pregunta 19 -->
+            <fieldset>
+                <legend>19. Apache no soporta protocolo seguro de transferencia de hipertexto (https).</legend>
+                <label><input type="radio" name="q19" id="q19a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q19" id="q19b" value="b"> b) Falso</label>
+                <span id="resultado19"></span>
+            </fieldset>
+        
+            <!-- Pregunta 20 -->
+            <fieldset>
+                <legend>20. En Apache podemos implementar diferentes tipos de configuraciones para proteger directorios. ¿Cuáles son?</legend>
+                <label><input type="radio" name="q20" id="q20a" value="a"> a) Básica, Digest y htaccess.</label><br>
+                <label><input type="radio" name="q20" id="q20b" value="b"> b) Digest y básica</label><br>
+                <label><input type="radio" name="q20" id="q20c" value="c"> c) Ninguna es cierta.</label><br>
+                <label><input type="radio" name="q20" id="q20d" value="d"> d) a) y b) son ciertas.</label>
+                <span id="resultado20"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>21. Se ha instalado el módulo de mysql en nuestro servidor de apache, así como la herramienta para gestionar phpmyadmin, pero el servidor no reconoce la página de inicio de la herramienta para poder gestionar la BD. Debemos:</legend>
+                <label><input type="radio" name="q21" id="q21a" value="a"> a) Modificar el fichero de configuración del sitio correspondiente donde van a estar alojadas las páginas web que accederán a la BD.</label><br>
+                <label><input type="radio" name="q21" id="q21b" value="b"> b) Modificar el fichero de configuración de apache apache2.conf</label><br>
+                <label><input type="radio" name="q21" id="q21c" value="c"> c) Modificar el 000-default.conf</label><br>
+                <label><input type="radio" name="q21" id="q21d" value="d"> d) Ninguna es cierta.</label>
+                <span id="resultado21"></span>
+            </fieldset>
+        
+            <!-- Pregunta 22 -->
+            <fieldset>
+                <legend>22. El método de autenticación en el que no hace falta tocar ningún fichero de configuración es:</legend>
+                <label><input type="radio" name="q22" id="q22a" value="a"> a) Digest</label><br>
+                <label><input type="radio" name="q22" id="q22b" value="b"> b) Básica</label><br>
+                <label><input type="radio" name="q22" id="q22c" value="c"> c) Usando htaccess</label><br>
+                <label><input type="radio" name="q22" id="q22d" value="d"> d) Todas son ciertas.</label>
+                <span id="resultado22"></span>
+            </fieldset>
+        
+            <!-- Pregunta 23 -->
+            <fieldset>
+                <legend>23. La configuración 1 es la misma que la 2:</legend>
+                <pre>1. &gt;Directory "/var/www/html/privado"&lt;
+            Order deny, allow
+            Require ip 192.168.1.0/24
+            Deny from all
+        &gt;/Directory&lt;
+        
+        2. &gt;Directory "/var/www/html/privado"&lt;
+            Allow from 192.168.1.0/24
+            &gt;/Directory&lt;</pre>
+                <label><input type="radio" name="q23" id="q23a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q23" id="q23b" value="b"> b) Falso</label>
+                <span id="resultado23"></span>
+            </fieldset>
+        
+            <!-- Pregunta 24 -->
+            <fieldset>
+                <legend>24. ¿Cuál es el puerto predeterminado en el que escucha el servidor Apache para conexiones HTTP?</legend>
+                <label><input type="radio" name="q24" id="q24a" value="a"> a) 21</label><br>
+                <label><input type="radio" name="q24" id="q24b" value="b"> b) 443</label><br>
+                <label><input type="radio" name="q24" id="q24c" value="c"> c) 80</label><br>
+                <label><input type="radio" name="q24" id="q24d" value="d"> d) 8080</label>
+                <span id="resultado24"></span>
+            </fieldset>
+        
+            <!-- Pregunta 25 -->
+            <fieldset>
+                <legend>25. ¿Cuál es la función de la directiva DocumentRoot en Apache?</legend>
+                <label><input type="radio" name="q25" id="q25a" value="a"> a) Establece el nombre del servidor</label><br>
+                <label><input type="radio" name="q25" id="q25b" value="b"> b) Define el directorio raíz donde se almacenan los archivos públicos del sitio web</label><br>
+                <label><input type="radio" name="q25" id="q25c" value="c"> c) Limita el acceso de los usuarios al servidor</label><br>
+                <label><input type="radio" name="q25" id="q25d" value="d"> d) Configura el puerto de escucha</label>
+                <span id="resultado25"></span>
+            </fieldset>
+        
+            <!-- Pregunta 26 -->
+            <fieldset>
+                <legend>26. ¿Cuál de las siguientes opciones NO es una directiva de control de acceso en Apache?</legend>
+                <label><input type="radio" name="q26" id="q26a" value="a"> a) Require</label><br>
+                <label><input type="radio" name="q26" id="q26b" value="b"> b) Order</label><br>
+                <label><input type="radio" name="q26" id="q26c" value="c"> c) Deny</label><br>
+                <label><input type="radio" name="q26" id="q26d" value="d"> d) IndexOptions</label>
+                <span id="resultado26"></span>
+            </fieldset>
+        
+            <!-- Pregunta 27 -->
+            <fieldset>
+                <legend>27. En Apache, ¿qué módulo se utiliza para habilitar la comunicación HTTPS?</legend>
+                <label><input type="radio" name="q27" id="q27a" value="a"> a) mod_ssl</label><br>
+                <label><input type="radio" name="q27" id="q27b" value="b"> b) mod_https</label><br>
+                <label><input type="radio" name="q27" id="q27c" value="c"> c) mod_security</label><br>
+                <label><input type="radio" name="q27" id="q27d" value="d"> d) mod_rewrite</label>
+                <span id="resultado27"></span>
+            </fieldset>
+        
+            <!-- Pregunta 28 -->
+            <fieldset>
+                <legend>28. ¿Cuál es la directiva que se utiliza en Apache 2.4 y versiones posteriores para reemplazar Order, Allow y Deny en la configuración de acceso?</legend>
+                <label><input type="radio" name="q28" id="q28a" value="a"> a) Permission</label><br>
+                <label><input type="radio" name="q28" id="q28b" value="b"> b) AccessControl</label><br>
+                <label><input type="radio" name="q28" id="q28c" value="c"> c) Require</label><br>
+                <label><input type="radio" name="q28" id="q28d" value="d"> d) AuthType</label>
+                <span id="resultado28"></span>
+            </fieldset>
+        
+            <!-- Pregunta 29 -->
+            <fieldset>
+                <legend>29. ¿Para qué se usa el archivo .htaccess en Apache?</legend>
+                <label><input type="radio" name="q29" id="q29a" value="a"> a) Cambiar la configuración global del servidor</label><br>
+                <label><input type="radio" name="q29" id="q29b" value="b"> b) Configurar parámetros de red de Apache</label><br>
+                <label><input type="radio" name="q29" id="q29c" value="c"> c) Permitir configuraciones de directorios específicos sin reiniciar el servidor</label><br>
+                <label><input type="radio" name="q29" id="q29d" value="d"> d) Controlar el límite de carga de archivos</label>
+                <span id="resultado29"></span>
+            </fieldset>
+        
+            <!-- Pregunta 30 -->
+            <fieldset>
+                <legend>30. ¿Cuál de las siguientes opciones se usa para permitir el acceso a un directorio en Apache solo desde una IP específica?</legend>
+                <label><input type="radio" name="q30" id="q30a" value="a"> a) DirectoryIndex</label><br>
+                <label><input type="radio" name="q30" id="q30b" value="b"> b) Allow from</label><br>
+                <label><input type="radio" name="q30" id="q30c" value="c"> c) Order allow, deny</label><br>
+                <label><input type="radio" name="q30" id="q30d" value="d"> d) Require ip</label>
+                <span id="resultado30"></span>
+            </fieldset>
+        
+            <!-- Pregunta 31 -->
+            <fieldset>
+                <legend>31. La directiva Listen en Apache se usa para definir en qué puerto escuchará el servidor.</legend>
+                <label><input type="radio" name="q31" id="q31a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q31" id="q31b" value="b"> b) Falso</label>
+                <span id="resultado31"></span>
+            </fieldset>
+        
+            <!-- Pregunta 32 -->
+            <fieldset>
+                <legend>32. Apache solo permite el uso de archivos HTML, no se puede configurar para ejecutar scripts como PHP.</legend>
+                <label><input type="radio" name="q32" id="q32a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q32" id="q32b" value="b"> b) Falso</label>
+                <span id="resultado32"></span>
+            </fieldset>
+        
+            <!-- Pregunta 33 -->
+            <fieldset>
+                <legend>33. La configuración de Apache se puede actualizar automáticamente al editar el archivo httpd.conf sin necesidad de reiniciar el servidor.</legend>
+                <label><input type="radio" name="q33" id="q33a" value="a"> a) Verdadero</label><br>
+                <label><input type="radio" name="q33" id="q33b" value="b"> b) Falso</label>
+                <span id="resultado33"></span>
+            </fieldset>
+        
+            <!-- Pregunta 34 -->
+            <fieldset>
+                <legend>34. ¿Cuál de las siguientes opciones se utiliza para definir múltiples sitios en un mismo servidor Apache?</legend>
+                <label><input type="radio" name="q34" id="q34a" value="a"> a) Listen</label><br>
+                <label><input type="radio" name="q34" id="q34b" value="b"> b) ServerAlias</label><br>
+                <label><input type="radio" name="q34" id="q34c" value="c"> c) VirtualHost</label><br>
+                <label><input type="radio" name="q34" id="q34d" value="d"> d) DirectoryIndex</label>
+                <span id="resultado34"></span>
+            </fieldset>
+        
+            <!-- Pregunta 35 -->
+            <fieldset>
+                <legend>35. ¿Cuál es la ubicación típica del archivo de configuración principal de Apache en sistemas Linux?</legend>
+                <label><input type="radio" name="q35" id="q35a" value="a"> a) /etc/apache2/apache.conf</label><br>
+                <label><input type="radio" name="q35" id="q35b" value="b"> b) /etc/httpd/conf/httpd.conf</label><br>
+                <label><input type="radio" name="q35" id="q35c" value="c"> c) /var/www/html</label><br>
+                <label><input type="radio" name="q35" id="q35d" value="d"> d) /usr/local/apache/config.conf</label>
+                <span id="resultado35"></span>
+            </fieldset>
+        
+            <!-- Pregunta 36 -->
+            <fieldset>
+                <legend>36. ¿Qué significa la directiva AllowOverride None en Apache?</legend>
+                <label><input type="radio" name="q36" id="q36a" value="a"> a) Permitir a los usuarios sobreescribir configuraciones del servidor</label><br>
+                <label><input type="radio" name="q36" id="q36b" value="b"> b) Bloquear cualquier configuración a través de archivos .htaccess</label><br>
+                <label><input type="radio" name="q36" id="q36c" value="c"> c) Permitir el acceso desde cualquier IP</label><br>
+                <label><input type="radio" name="q36" id="q36d" value="d"> d) Desactivar todos los módulos de Apache</label>
+                <span id="resultado36"></span>
+            </fieldset>
+        
+            <!-- Pregunta 37 -->
+            <fieldset>
+                <legend>37. ¿Cuál de las siguientes configuraciones permite limitar el número de conexiones simultáneas en Apache?</legend>
+                <label><input type="radio" name="q37" id="q37a" value="a"> a) MaxClients</label><br>
+                <label><input type="radio" name="q37" id="q37b" value="b"> b) MaxConnections</label><br>
+                <label><input type="radio" name="q37" id="q37c" value="c"> c) MaxThreads</label><br>
+                <label><input type="radio" name="q37" id="q37d" value="d"> d) MaxProcesses</label>
+                <span id="resultado37"></span>
+            </fieldset>
+
+            <!-- Botón para enviar -->
+            <div class="submit-section">
+                <button type="button" onclick="calificar()">Enviar respuestas</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Preguntas Apache</p>
+    </footer>
+    <script src="examen.js"></script>
+</body>
+</html>

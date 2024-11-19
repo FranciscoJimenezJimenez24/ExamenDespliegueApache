@@ -56,7 +56,6 @@ function calificar() {
 
         // Si se seleccionó una respuesta, la comparamos
         if (respuestaSeleccionada) {
-            console.log(respuestaSeleccionada + " === " + respuestasCorrectas["q" + i]);
             if (respuestaSeleccionada === respuestasCorrectas["q" + i]) {
                 contador++;
                 document.getElementById("resultado" + i).innerText = "¡Correcto!";
